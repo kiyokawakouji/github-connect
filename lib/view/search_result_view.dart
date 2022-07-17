@@ -1,47 +1,62 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class SearchResultView extends StatefulWidget {
+  const SearchResultView({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<SearchResultView> createState() => _SearchResultViewState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _SearchResultViewState extends State<SearchResultView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
+          // title: Text(widget.title),
+          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: _SearchBarWidget(),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+    );
+  }
+
+  Widget _SearchBarWidget() {
+    return Container(
+      margin: const EdgeInsets.all(16),
+      child: const TextField(
+        decoration: InputDecoration(
+          filled: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(40),
+            ),
+            borderSide: const BorderSide(
+              width: 0,
+              style: BorderStyle.none,
+            ),
+          ),
+          prefixIcon: Icon(Icons.search),
+          hintText: 'Search for a project.',
+        ),
+        // onChanged: (inputString) {
+        //   if (inputString.length >= 5) {
+        //     _searchRepositories(inputString).then((repositories) {
+        //       setState(() {
+        //         _repositories = repositories;
+        //       });
+        //     });
+        //   }
+        // },
       ),
     );
   }
