@@ -47,14 +47,12 @@ class _ArticleDescription extends StatelessWidget {
     required this.subtitle,
     required this.author,
     required this.publishDate,
-    required this.readDuration,
   }) : super(key: key);
 
   final String title;
   final String subtitle;
   final String author;
   final String publishDate;
-  final String readDuration;
 
   @override
   Widget build(BuildContext context) {
@@ -67,13 +65,12 @@ class _ArticleDescription extends StatelessWidget {
             children: <Widget>[
               Text(
                 title,
-                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Padding(padding: EdgeInsets.only(bottom: 2)),
+              // const Padding(padding: EdgeInsets.only(bottom: 0)),
               Text(
                 subtitle,
                 maxLines: 2,
@@ -91,13 +88,7 @@ class _ArticleDescription extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Text(
-                author,
-                style: const TextStyle(
-                  fontSize: 12,
-                ),
-              ),
-              Text(
-                '$publishDate - $readDuration',
+                '$author - $publishDate',
                 style: const TextStyle(
                   fontSize: 12,
                 ),
@@ -117,21 +108,20 @@ class CustomListItemTwo extends StatelessWidget {
     required this.subtitle,
     required this.author,
     required this.publishDate,
-    required this.readDuration,
   }) : super(key: key);
 
   final String title;
   final String subtitle;
   final String author;
   final String publishDate;
-  final String readDuration;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Container(
-        height: 100,
+        padding: const EdgeInsets.all(8),
+        height: 110,
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(color: Colors.white),
@@ -156,7 +146,6 @@ class CustomListItemTwo extends StatelessWidget {
                   subtitle: subtitle,
                   author: author,
                   publishDate: publishDate,
-                  readDuration: readDuration,
                 ),
               ),
             )
@@ -181,7 +170,41 @@ class MyStatelessWidget extends StatelessWidget {
               'This text should max out at two lines and clip',
           author: 'Dash',
           publishDate: 'Dec 28',
-          readDuration: '5 mins',
+        ),
+        CustomListItemTwo(
+          title: 'Flutter 1.0 Launch',
+          subtitle: 'Flutter continues to improve and expand its horizons. '
+              'This text should max out at two lines and clip',
+          author: 'Dash',
+          publishDate: 'Dec 28',
+        ),
+        CustomListItemTwo(
+          title: 'Flutter 1.0 Launch',
+          subtitle: 'Flutter continues to improve and expand its horizons. '
+              'This text should max out at two lines and clip',
+          author: 'Dash',
+          publishDate: 'Dec 28',
+        ),
+        CustomListItemTwo(
+          title: 'Flutter 1.0 Launch',
+          subtitle: 'Flutter continues to improve and expand its horizons. '
+              'This text should max out at two lines and clip',
+          author: 'Dash',
+          publishDate: 'Dec 28',
+        ),
+        CustomListItemTwo(
+          title: 'Flutter 1.0 Launch',
+          subtitle: 'Flutter continues to improve and expand its horizons. '
+              'This text should max out at two lines and clip',
+          author: 'Dash',
+          publishDate: 'Dec 28',
+        ),
+        CustomListItemTwo(
+          title: 'Flutter 1.0 Launch',
+          subtitle: 'Flutter continues to improve and expand its horizons. '
+              'This text should max out at two lines and clip',
+          author: 'Dash',
+          publishDate: 'Dec 28',
         ),
       ],
     );
