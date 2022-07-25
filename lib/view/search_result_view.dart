@@ -14,17 +14,16 @@ class _SearchResultViewState extends State<SearchResultView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // title: Text(widget.title),
-          ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Center(
+          child: _SearchBarWidget(),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: _SearchBarWidget(),
-            ),
-          ],
+        child: Center(
+          child: _SearchBarWidget(),
         ),
       ),
     );
