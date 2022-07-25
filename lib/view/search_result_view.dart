@@ -55,6 +55,7 @@ class _ArticleDescription extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              // TODO(k): subtitleのbottomの制御
               const Padding(padding: EdgeInsets.only(bottom: 8)),
               Text(
                 subtitle,
@@ -147,6 +148,7 @@ class MyStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      // TODO(k): このエラーの解消 → A RenderFlex overflowed by 6.0 pixels on the bottom.
       padding: const EdgeInsets.all(10),
       children: const [
         CustomListItemTwo(
