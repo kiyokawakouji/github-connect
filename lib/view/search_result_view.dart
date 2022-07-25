@@ -10,8 +10,6 @@ class SearchResultView extends StatefulWidget {
 }
 
 class _SearchResultViewState extends State<SearchResultView> {
-  // List<Color> colorList = [Colors.cyan, Colors.tealAccent, Colors.greenAccent];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,19 +21,6 @@ class _SearchResultViewState extends State<SearchResultView> {
         ),
       ),
       body: const MyStatelessWidget(),
-      // body: Padding(
-      //   padding: const EdgeInsets.all(16),
-      //   child: Center(
-      //     child: ListView.builder(
-      //       itemBuilder: (BuildContext context, int index) {
-      //         return Container(
-      //           height: 80,
-      //           color: colorList[index % colorList.length],
-      //         );
-      //       },
-      //     ),
-      //   ),
-      // ),
     );
   }
 }
@@ -70,7 +55,7 @@ class _ArticleDescription extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              // const Padding(padding: EdgeInsets.only(bottom: 0)),
+              const Padding(padding: EdgeInsets.only(bottom: 8)),
               Text(
                 subtitle,
                 maxLines: 2,
